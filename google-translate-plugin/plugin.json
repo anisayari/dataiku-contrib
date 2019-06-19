@@ -1,0 +1,15 @@
+{
+    "id" : "google-translate-plugin",
+
+    "version" : "0.0.6",
+
+    "meta" : {
+        "label" : "Plugin google-translate-plugin",
+        "description" : "Translate and detect language of a given text column with",
+        "author" : "Anis Ayari https://github.com/anisayari",
+        "icon" : "icon-quote-left",
+        "licenseInfo" : "Apache Software License",
+        "url" : "https://www.dataiku.com",
+        "tags" : ["Google", "translate","language"]
+    }
+}

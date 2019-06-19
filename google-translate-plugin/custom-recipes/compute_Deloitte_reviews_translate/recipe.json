@@ -1,0 +1,70 @@
+{
+    "meta" : {
+        "label" : "Custom recipe from recipe compute_Deloitte_reviews_translate",
+        "description" : "Custom recipe",
+        "icon" : "icon-puzzle-piece"
+    },
+
+    "kind" : "PYTHON",
+
+    "inputRoles" : [
+        {
+            "name": "dataset_to_translate",
+            "label": "Dataset to translate",
+            "description": "what input A means",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        },
+        {
+            "name": "folder_of_credentials",
+            "label": "Folder where the credentials is stocked",
+            "description": "Folder where the credentials is stocked",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsManagedFolder": true
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "dataset_translated",
+            "label": "Dataset Translated",
+            "description": "The output dataset with the column translated",
+            "arity": "UNARY",
+            "required": false,
+            "acceptsDataset": true
+        }
+    ],
+
+    "params": [
+        {
+            "name": "target_language",
+            "label" : "Target Language",
+            "type": "STRING",
+            "description":"The target language for the column to translate",
+            "mandatory" : true
+        },
+
+        // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
+        // To specify the input schema whose column names are used, use the "columnRole" field like below.
+        // The column names will come from the schema of the first dataset associated to that role.
+        {
+            "name": "column_to_translate",
+            "type": "COLUMN",
+            "columnRole":"dataset_to_translate",
+            "mandatory" : true
+        }
+
+        // The 'COLUMNS' type works in the same way, except that it is a list of strings.
+    ],
+
+    // The field "resourceKeys" holds a list of keys that allows to limit the number
+    // of concurrent executions and activities triggered by this recipe.
+    //
+    // Administrators can configure the limit per resource key in the Administration > Settings > Flow build
+    // screen.
+
+    "resourceKeys" : []
+
+}
